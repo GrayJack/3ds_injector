@@ -319,7 +319,7 @@ void patch_code(u64 progid, u8 *code, u32 size)
 
             u8 recentFpdVer = 10;
 
-            u8 *offset = memsearch(code, friend_module_pattern, text_size, sizeof(pattern));
+            u8 *offset = memsearch(code, friend_module_pattern, size, sizeof(friend_module_pattern));
 
             // Allow online access to work with old friends modules
             if(offset[0xA] < recentFpdVer) offset[0xA] = recentFpdVer;
